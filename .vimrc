@@ -164,7 +164,7 @@ let mapleader = ","
 
 set number
 map <silent> <C-n> :NERDTreeToggle<CR>
-nnoremap <silent> <F5> :!~/.skripte/pokreni.sh %<CR>
+nnoremap <silent> <F5> :!~/wm/skripte/pokreni.sh %<CR>
 set tabstop=4
 set shiftwidth=4
 " :set background=dark
