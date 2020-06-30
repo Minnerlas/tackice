@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --no-fehbg --bg-fill '/home/nikola/Pictures/wall.jpg' 
+feh --no-fehbg --bg-fill '/usr/share/pixmaps/wall.jpg' 
