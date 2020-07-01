@@ -11,7 +11,10 @@ xinput set-prop $TP `xinput list-props $TP | grep "libinput Natural Scrolling En
 
 numlockx &
 
-( picom & ) || ( xcompmgr & )
+picom & 
+
+# wait 1
+# xcompmgr & 
  
 xautolock -time 10 -locker slock &
 
