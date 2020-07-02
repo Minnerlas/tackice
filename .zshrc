@@ -207,7 +207,6 @@ alias grep='grep --color=auto'
 alias dexit='disown && exit'
 alias pdb='python -m pdb'
 alias usbovi='cd /run/media/$USER/'
-alias config='/usr/bin/git --git-dir=$HOME/wm/tackice/ --work-tree=$HOME'
 
 ### Bind keys
 #############
@@ -306,3 +305,9 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # source $HOME/.cargo/env
 korona
 set -o vi
+source ~/.dotbare/dotbare.plugin.zsh
+# alias config='/usr/bin/git --git-dir=$HOME/wm/tackice/ --work-tree=$HOME'
+
+export DOTBARE_DIR="$HOME/wm/tackice/"
+export DOTBARE_TREE="$HOME"
+alias config=dotbare
