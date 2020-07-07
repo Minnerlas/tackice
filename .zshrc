@@ -39,7 +39,7 @@ zle -N history-beginning-search-forward-end history-search-end
 
 ### Set variables
 #################
-PATH="$HOME/wm/skripte:/usr/local/bin:/usr/local/sbin/:$PATH"
+PATH="$HOME/.local/bin:$HOME/wm/skripte:/usr/local/bin:/usr/local/sbin/:$PATH"
 HISTFILE=$HOME/.zhistory
 HISTSIZE=1000
 SAVEHIST=1000
@@ -207,6 +207,9 @@ alias grep='grep --color=auto'
 alias dexit='disown && exit'
 alias pdb='python -m pdb'
 alias usbovi='cd /run/media/$USER/'
+alias pcmanfm='devour pcmanfm'
+alias vlc='devour vlc'
+alias mpv='devour mpv'
 
 ### Bind keys
 #############
