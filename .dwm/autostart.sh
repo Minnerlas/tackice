@@ -22,7 +22,10 @@ slstatus &
 
 dunst &
 
-sudo ip link set wlp0s20u3 up &
+lxsession &
+
+flameshot &
+
 sudo ip link set wlp19s0 down &
 
 #bindsym XF86AudioLowerVolume exec notify-send "Volume" `amixer sget Master | grep 'Right:' | awk -F'[][]' '{ print $2 }'`

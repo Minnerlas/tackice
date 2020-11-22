@@ -156,6 +156,7 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'vimwiki/vimwiki'
+Plug 'vim-scripts/c.vim'
 
 call plug#end()
 

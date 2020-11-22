@@ -96,7 +96,7 @@ NC="\e[m"               # Color Reset
 ##############
 PR_NO_COLOR="%{$terminfo[sgr0]%}"
 PS1="[%(!.${PR_RED}%n.$PR_LIGHT_YELLOW%n)%(!.${PR_LIGHT_YELLOW}@.$PR_RED@)$PR_NO_COLOR%(!.${PR_LIGHT_RED}%U%m%u.${PR_LIGHT_GREEN}%U%m%u)$PR_NO_COLOR:%(!.${PR_RED}%2c.${PR_BLUE}%2c)$PR_NO_COLOR]%(?..[${PR_LIGHT_RED}%?$PR_NO_COLOR])%(!.${PR_LIGHT_RED}#.${PR_LIGHT_GREEN}$) "
-RPS1="$PR_LIGHT_YELLOW(%D{%m-%d %H:%M})$PR_NO_COLOR"
+RPS1="$PR_LIGHT_YELLOW(%D{%d-%m %H:%M})$PR_NO_COLOR"
 unsetopt ALL_EXPORT
 
 ### set common functions
@@ -210,6 +210,8 @@ alias usbovi='cd /run/media/$USER/'
 alias pcmanfm='devour pcmanfm'
 alias vlc='devour vlc'
 alias mpv='devour mpv'
+alias gparted='devour gparted'
+alias zathura='devour zathura'
 
 ### Bind keys
 #############
@@ -306,11 +308,16 @@ zstyle '*' single-ignored show
 ##################
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # source $HOME/.cargo/env
-korona
+# korona
 set -o vi
 source ~/.dotbare/dotbare.plugin.zsh
 # alias config='/usr/bin/git --git-dir=$HOME/wm/tackice/ --work-tree=$HOME'
 
-export DOTBARE_DIR="$HOME/wm/tackice/"
+export DOTBARE_DIR="$HOME/.cfg"
 export DOTBARE_TREE="$HOME"
 alias config=dotbare
+alias reboot="sudo loginctl reboot"
+alias shutdown="sudo loginctl poweroff"
+export NO_AT_BRIDGE=1
+export PATH="$PATH:$HOME/x86_64-gcc/bin/:$HOME/.emacs.d/bin:$HOME/arm-gcc/bin"
+export _JAVA_AWT_WM_NONREPARENTING=1 
