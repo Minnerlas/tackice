@@ -326,6 +326,7 @@ set -o vi
 source ~/.dotbare/dotbare.plugin.zsh
 # alias config='/usr/bin/git --git-dir=$HOME/wm/tackice/ --work-tree=$HOME'
 
+export EDITOR="vim"
 export DOTBARE_DIR="$HOME/.cfg"
 export DOTBARE_TREE="$HOME"
 alias config=dotbare
