@@ -182,4 +182,17 @@ set splitright
 " set colorcolumn=110
 " highlight ColorColumn ctermbg=darkgray
 
+let g:Tex_PromptedEnvironments = ""
 let NERDTreeHijackNetrw=0
+set grepprg=grep\ -nH\ $*
+let g:tex_flavor = "latex"
+set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
+
+" 80 karaktera po redu
+autocmd BufRead,BufNewFile *.c,*.cpp,*.py,*.rs,*.h highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+autocmd BufRead,BufNewFile *.c,*.cpp,*.py,*.rs,*.h match OverLength /\%81v.\+/
+
+autocmd BufRead,BufNewFile *.c,*.cpp,*.py,*.rs,*.h highlight ColorColumn ctermbg=darkgray
+autocmd BufRead,BufNewFile *.c,*.cpp,*.py,*.rs,*.h setlocal colorcolumn=81
+
+" Da bi postavio na određeni programski jezik, ukcaj :setf c
