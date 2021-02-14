@@ -39,7 +39,7 @@ zle -N history-beginning-search-forward-end history-search-end
 
 ### Set variables
 #################
-PATH="$HOME/.local/bin:$HOME/wm/skripte:/usr/local/bin:/usr/local/sbin/:$PATH"
+PATH="$PATH:$HOME/.local/bin:$HOME/wm/skripte:/usr/local/bin:/usr/local/sbin/"
 HISTFILE=$HOME/.zhistory
 HISTSIZE=1000
 SAVEHIST=1000
@@ -335,3 +335,4 @@ alias shutdown="sudo loginctl poweroff"
 export NO_AT_BRIDGE=1
 export PATH="$PATH:$HOME/x86_64-gcc/bin/:$HOME/.emacs.d/bin:$HOME/arm-gcc/bin"
 export _JAVA_AWT_WM_NONREPARENTING=1 
+# export MANPAGER="env MAN_PN=1 vim -M +MANPAGER -"
