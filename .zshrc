@@ -225,6 +225,8 @@ alias mpv='devour mpv'
 alias gparted='devour gparted'
 alias zathura='devour zathura'
 alias tlmgr='/usr/share/texmf-dist/scripts/texlive/tlmgr.pl --usermode'
+alias ffpw='firefox --private-window'
+alias ffpwd='devour firefox --private-window'
 
 ### Bind keys
 #############
@@ -329,10 +331,17 @@ source ~/.dotbare/dotbare.plugin.zsh
 export EDITOR="vim"
 export DOTBARE_DIR="$HOME/.cfg"
 export DOTBARE_TREE="$HOME"
-alias config=dotbare
-alias reboot="sudo loginctl reboot"
-alias shutdown="sudo loginctl poweroff"
+
 export NO_AT_BRIDGE=1
 export PATH="$PATH:$HOME/x86_64-gcc/bin/:$HOME/.emacs.d/bin:$HOME/arm-gcc/bin"
 export _JAVA_AWT_WM_NONREPARENTING=1 
+
+alias config=dotbare
+alias reboot="sudo loginctl reboot"
+alias shutdown="sudo loginctl poweroff"
+alias vcb="xclip -i -selection clipboard -o | vim -c 'setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile' -"
+alias srbija="echo \"\033[41m      \033[44m      \033[47m      \033[0m\""
+alias ed="ed -v -p:"
+
 # export MANPAGER="env MAN_PN=1 vim -M +MANPAGER -"
+# export MANPAGER="sh -c 'col -bx | bat -l man -p'"

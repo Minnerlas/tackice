@@ -157,6 +157,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'vimwiki/vimwiki'
 Plug 'vim-scripts/c.vim'
+Plug 'jupyter-vim/jupyter-vim'
 
 call plug#end()
 
@@ -170,6 +171,7 @@ set tabstop=4
 set shiftwidth=4
 " set background=dark
 set background=light
+hi Visual ctermbg=darkgrey
 
 
 vnoremap <C-c> "*y :let @+=@*<CR>
@@ -189,10 +191,14 @@ let g:tex_flavor = "latex"
 set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
 
 " 80 karaktera po redu
-autocmd BufRead,BufNewFile *.c,*.cpp,*.py,*.rs,*.h highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-autocmd BufRead,BufNewFile *.c,*.cpp,*.py,*.rs,*.h match OverLength /\%81v.\+/
+autocmd BufRead,BufNewFile *.c,*.cpp,*.py,*.rs,*.h,*.sh 
+		\ highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+autocmd BufRead,BufNewFile *.c,*.cpp,*.py,*.rs,*.h,*.sh
+		\ match OverLength /\%81v.\+/
 
-autocmd BufRead,BufNewFile *.c,*.cpp,*.py,*.rs,*.h highlight ColorColumn ctermbg=darkgray
-autocmd BufRead,BufNewFile *.c,*.cpp,*.py,*.rs,*.h setlocal colorcolumn=81
+autocmd BufRead,BufNewFile *.c,*.cpp,*.py,*.rs,*.h,*.sh
+		\ highlight ColorColumn ctermbg=darkgray
+autocmd BufRead,BufNewFile *.c,*.cpp,*.py,*.rs,*.h,*.sh
+		\ setlocal colorcolumn=81
 
 " Da bi postavio na određeni programski jezik, ukcaj :setf c
