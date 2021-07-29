@@ -152,17 +152,17 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-
 call plug#begin('~/.vim/plugged')
 
 Plug 'vimwiki/vimwiki'
 Plug 'vim-scripts/c.vim'
 Plug 'jupyter-vim/jupyter-vim'
+Plug 'hellerve/carp-vim'
 
 call plug#end()
 
-let mapleader = ","
 
+let mapleader = ","
 
 set number
 map <silent> <C-n> :NERDTreeToggle<CR>
@@ -170,9 +170,13 @@ nnoremap <silent> <F5> :!~/wm/skripte/pokreni.sh %<CR>
 set tabstop=4
 set shiftwidth=4
 " set background=dark
+if has("gui_running")
+	colorscheme desert
+endif
+" set guifont=Consolas:h9
 set background=light
 hi Visual ctermbg=darkgrey
-
+nmap Y y$
 
 vnoremap <C-c> "*y :let @+=@*<CR>
 map <C-p> "+p
@@ -190,15 +194,43 @@ set grepprg=grep\ -nH\ $*
 let g:tex_flavor = "latex"
 set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
 
+" Visak praznog
+autocmd BufRead,BufNewFile * highlight TrailingWhiteSp ctermbg=red ctermfg=white guibg=#592929
+autocmd BufRead,BufNewFile * match TrailingWhiteSp /\s\+$/
+autocmd InsertEnter * match TrailingWhiteSp /\s\+\%#\@<!$/
+autocmd InsertLeave * match TrailingWhiteSp /\s\+$/
+
 " 80 karaktera po redu
-autocmd BufRead,BufNewFile *.c,*.cpp,*.py,*.rs,*.h,*.sh 
+autocmd BufRead,BufNewFile *.c,*.cpp,*.py,*.rs,*.h,*.sh,*.java,*.tex,*.scm
 		\ highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-autocmd BufRead,BufNewFile *.c,*.cpp,*.py,*.rs,*.h,*.sh
+autocmd BufRead,BufNewFile *.c,*.cpp,*.py,*.rs,*.h,*.sh,*.java,*.tex,*.scm
 		\ match OverLength /\%81v.\+/
 
-autocmd BufRead,BufNewFile *.c,*.cpp,*.py,*.rs,*.h,*.sh
+autocmd BufRead,BufNewFile *.c,*.cpp,*.py,*.rs,*.h,*.sh,*.java,*.tex,*.scm
 		\ highlight ColorColumn ctermbg=darkgray
-autocmd BufRead,BufNewFile *.c,*.cpp,*.py,*.rs,*.h,*.sh
+autocmd BufRead,BufNewFile *.c,*.cpp,*.py,*.rs,*.h,*.sh,*.java,*.tex,*.scm
 		\ setlocal colorcolumn=81
 
-" Da bi postavio na određeni programski jezik, ukcaj :setf c
+
+autocmd BufRead,BufNewFile *.qbe,*.ssa setf sh
+let g:is_chicken = 1
+
+let g:termdebug_wide=100
+noremap <silent> <leader>td :packadd termdebug<cr>:Termdebug<cr>
+" Add mappings for :Step and :Over
+noremap <silent> <leader>s :Step<cr>
+noremap <silent> <leader>o :Over<cr>
+noremap <silent> <leader>n :Next<cr>
+noremap <silent> <leader>b :Break<cr>
+noremap <silent> <leader>r :Run<cr>
+noremap <silent> <leader>c :Cont<cr>
+
+" Definisanje okruženja
+" :onoremap <silent> i$ :<C-U>normal! T$vt$<CR>
+" :onoremap <silent> a$ :<C-U>normal! F$vf$<CR>
+
+
+
+" Da bi postavio na određeni programski jezik, ukucaj :setf c
+
+" PlugUpdate
