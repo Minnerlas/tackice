@@ -158,6 +158,8 @@ Plug 'vimwiki/vimwiki'
 Plug 'vim-scripts/c.vim'
 Plug 'jupyter-vim/jupyter-vim'
 Plug 'hellerve/carp-vim'
+Plug 'uniquepointer/qbe.vim'
+Plug 'kovisoft/slimv'
 
 call plug#end()
 
@@ -178,7 +180,8 @@ set background=light
 hi Visual ctermbg=darkgrey
 nmap Y y$
 
-vnoremap <C-c> "*y :let @+=@*<CR>
+" TODO: Skontati ovo
+" vnoremap <C-c> "*y :let @+=@*<CR>
 map <C-p> "+p
 tnoremap <ESC><ESC> <C-\><C-N>
 
@@ -194,11 +197,25 @@ set grepprg=grep\ -nH\ $*
 let g:tex_flavor = "latex"
 set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
 
+let scheme_repl_command = "tcc-csi"
+
+" Scheme REPL
+" http://www.foldling.org/hacking.html#2012-08-05
+nmap <C-c><C-s> :!st -e start-repl.sh tcc-csi &<CR>
+nmap <C-c><C-c> vap:w >> repl<CR>
+vmap <C-c><C-v> <ESC>:'<,'>w >> repl<CR>
+
+" Tabovi
+autocmd FileType scheme setlocal shiftwidth=2 softtabstop=2 expandtab
+
+" Tipovi fajlova
+autocmd BufRead,BufNewFile *.sld setf scheme
+
 " Visak praznog
-autocmd BufRead,BufNewFile * highlight TrailingWhiteSp ctermbg=red ctermfg=white guibg=#592929
-autocmd BufRead,BufNewFile * match TrailingWhiteSp /\s\+$/
-autocmd InsertEnter * match TrailingWhiteSp /\s\+\%#\@<!$/
-autocmd InsertLeave * match TrailingWhiteSp /\s\+$/
+autocmd BufRead,BufNewFile *.* highlight TrailingWhiteSp ctermbg=red ctermfg=white guibg=#592929
+autocmd BufRead,BufNewFile *.* match TrailingWhiteSp /\s\+$/
+autocmd InsertEnter *.* match TrailingWhiteSp /\s\+\%#\@<!$/
+autocmd InsertLeave *.* match TrailingWhiteSp /\s\+$/
 
 " 80 karaktera po redu
 autocmd BufRead,BufNewFile *.c,*.cpp,*.py,*.rs,*.h,*.sh,*.java,*.tex,*.scm
