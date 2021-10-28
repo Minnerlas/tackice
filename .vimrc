@@ -167,8 +167,8 @@ call plug#end()
 let mapleader = ","
 
 set number
-map <silent> <C-n> :NERDTreeToggle<CR>
-nnoremap <silent> <F5> :!~/wm/skripte/pokreni.sh %<CR>
+" map <silent> <C-n> :NERDTreeToggle<CR>
+nnoremap <silent> <F5> :!pokreni.sh %<CR>
 set tabstop=4
 set shiftwidth=4
 " set background=dark
@@ -180,9 +180,10 @@ set background=light
 hi Visual ctermbg=darkgrey
 nmap Y y$
 
-" TODO: Skontati ovo
+" TODO: Skontati ovo, kopiranje ne radi
 " vnoremap <C-c> "*y :let @+=@*<CR>
 map <C-p> "+p
+
 tnoremap <ESC><ESC> <C-\><C-N>
 
 set splitbelow
@@ -204,6 +205,8 @@ let scheme_repl_command = "tcc-csi"
 nmap <C-c><C-s> :!st -e start-repl.sh tcc-csi &<CR>
 nmap <C-c><C-c> vap:w >> repl<CR>
 vmap <C-c><C-v> <ESC>:'<,'>w >> repl<CR>
+nmap <C-c><C-r> VG:'<,'>w >> repl<CR>
+nmap <C-c><C-a> :w >> repl<CR>
 
 " Tabovi
 autocmd FileType scheme setlocal shiftwidth=2 softtabstop=2 expandtab
