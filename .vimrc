@@ -155,11 +155,14 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'vimwiki/vimwiki'
-Plug 'vim-scripts/c.vim'
-Plug 'jupyter-vim/jupyter-vim'
+" Plug 'vim-scripts/c.vim'
+" Plug 'jupyter-vim/jupyter-vim'
 Plug 'hellerve/carp-vim'
 Plug 'uniquepointer/qbe.vim'
-Plug 'kovisoft/slimv'
+" Plug 'kovisoft/slimv'
+Plug 'JuliaEditorSupport/julia-vim'
+Plug 'https://git.sr.ht/~sircmpwn/hare.vim'
+Plug 'junegunn/fzf'
 
 call plug#end()
 
@@ -177,7 +180,10 @@ if has("gui_running")
 endif
 " set guifont=Consolas:h9
 set background=light
+set hlsearch
+" noh brise trenutno oznaceno
 hi Visual ctermbg=darkgrey
+hi Search cterm=NONE ctermfg=grey ctermbg=blue
 nmap Y y$
 
 " TODO: Skontati ovo, kopiranje ne radi
@@ -196,17 +202,21 @@ let g:Tex_PromptedEnvironments = ""
 let NERDTreeHijackNetrw=0
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor = "latex"
-set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
+" TODO: Proveriti cemu ovo sluzi
+" set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
 
-let scheme_repl_command = "tcc-csi"
 
 " Scheme REPL
 " http://www.foldling.org/hacking.html#2012-08-05
+" let scheme_repl_command = "tcc-csi"
 nmap <C-c><C-s> :!st -e start-repl.sh tcc-csi &<CR>
+nmap <C-c><C-o> :!st -e start-repl.sh ocaml &<CR>
 nmap <C-c><C-c> vap:w >> repl<CR>
 vmap <C-c><C-v> <ESC>:'<,'>w >> repl<CR>
-nmap <C-c><C-r> VG:'<,'>w >> repl<CR>
+nmap <C-c><C-r> vapG:'<,'>w >> repl<CR>
 nmap <C-c><C-a> :w >> repl<CR>
+
+" nmap <C-c><C-p> di()<Esc>P
 
 " Tabovi
 autocmd FileType scheme setlocal shiftwidth=2 softtabstop=2 expandtab
@@ -221,14 +231,14 @@ autocmd InsertEnter *.* match TrailingWhiteSp /\s\+\%#\@<!$/
 autocmd InsertLeave *.* match TrailingWhiteSp /\s\+$/
 
 " 80 karaktera po redu
-autocmd BufRead,BufNewFile *.c,*.cpp,*.py,*.rs,*.h,*.sh,*.java,*.tex,*.scm
+autocmd BufRead,BufNewFile *.c,*.cpp,*.py,*.rs,*.h,*.sh,*.java,*.tex,*.scm,*.ml,*.ha
 		\ highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-autocmd BufRead,BufNewFile *.c,*.cpp,*.py,*.rs,*.h,*.sh,*.java,*.tex,*.scm
+autocmd BufRead,BufNewFile *.c,*.cpp,*.py,*.rs,*.h,*.sh,*.java,*.tex,*.scm,*.ml,*.ha
 		\ match OverLength /\%81v.\+/
 
-autocmd BufRead,BufNewFile *.c,*.cpp,*.py,*.rs,*.h,*.sh,*.java,*.tex,*.scm
+autocmd BufRead,BufNewFile *.c,*.cpp,*.py,*.rs,*.h,*.sh,*.java,*.tex,*.scm,*.ml,*.ha
 		\ highlight ColorColumn ctermbg=darkgray
-autocmd BufRead,BufNewFile *.c,*.cpp,*.py,*.rs,*.h,*.sh,*.java,*.tex,*.scm
+autocmd BufRead,BufNewFile *.c,*.cpp,*.py,*.rs,*.h,*.sh,*.java,*.tex,*.scm,*.ml,*.ha
 		\ setlocal colorcolumn=81
 
 
@@ -250,7 +260,15 @@ noremap <silent> <leader>c :Cont<cr>
 " :onoremap <silent> a$ :<C-U>normal! F$vf$<CR>
 
 
+" Sledeca i prethodna pretraga
+nnoremap <silent> cn :cn<cr>
+" noremap <silent> co :co<cr>
 
+" Fuzzy search for a file
+nnoremap <silent> <C-l> :FZF<cr>
+
+" v<izaberi tekst>p => menja izabrani tekst sadrzajem "
 " Da bi postavio na određeni programski jezik, ukucaj :setf c
+" Da bi birao koji pogodak se menja, dodati c na kraju, npr: s/a/b/gc
 
 " PlugUpdate

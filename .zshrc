@@ -350,7 +350,7 @@ alias reboot="sudo loginctl reboot"
 alias shutdown="sudo loginctl poweroff"
 alias vcb="xclip -i -selection clipboard -o | vim -c 'setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile' -"
 alias srbija="echo \"\033[41m      \033[44m      \033[47m      \033[0m\""
-alias ed="ed -v -p:"
+alias ed="ed -vp:"
 alias cnping="cnping -t Test"
 alias packettracer="devour packettracer"
 
