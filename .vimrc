@@ -163,6 +163,7 @@ Plug 'uniquepointer/qbe.vim'
 Plug 'JuliaEditorSupport/julia-vim'
 Plug 'https://git.sr.ht/~sircmpwn/hare.vim'
 Plug 'junegunn/fzf'
+Plug 'vhda/verilog_systemverilog.vim'
 
 call plug#end()
 
@@ -241,6 +242,7 @@ autocmd BufRead,BufNewFile *.c,*.cpp,*.py,*.rs,*.h,*.sh,*.java,*.tex,*.scm,*.ml,
 autocmd BufRead,BufNewFile *.c,*.cpp,*.py,*.rs,*.h,*.sh,*.java,*.tex,*.scm,*.ml,*.ha
 		\ setlocal colorcolumn=81
 
+autocmd BufRead,BufNewFile *.vl setf verilog
 
 autocmd BufRead,BufNewFile *.qbe,*.ssa setf sh
 let g:is_chicken = 1
@@ -266,6 +268,21 @@ nnoremap <silent> cn :cn<cr>
 
 " Fuzzy search for a file
 nnoremap <silent> <C-l> :FZF<cr>
+
+" TODO
+" " Commenting blocks of code.
+" augroup commenting_blocks_of_code
+" 	autocmd!
+" 	autocmd FileType c,cpp,java,scala let b:comment_leader = '// '
+" 	autocmd FileType sh,ruby,python   let b:comment_leader = '# '
+" 	autocmd FileType conf,fstab       let b:comment_leader = '# '
+" 	autocmd FileType tex              let b:comment_leader = '% '
+" 	autocmd FileType mail             let b:comment_leader = '> '
+" 	autocmd FileType vim              let b:comment_leader = '" '
+" 	autocmd FileType julia            let b:comment_leader = '# '
+" augroup END
+" noremap <silent> ,cc :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
+" noremap <silent> ,cu :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
 
 " v<izaberi tekst>p => menja izabrani tekst sadrzajem "
 " Da bi postavio na određeni programski jezik, ukucaj :setf c
