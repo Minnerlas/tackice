@@ -25,7 +25,7 @@ setopt ALL_EXPORT
 ############################
 setopt   notify globdots correct pushdtohome cdablevars autolist
 setopt   correctall autocd recexact longlistjobs
-setopt   autoresume histignoredups pushdsilent 
+setopt   autoresume histignoredups pushdsilent
 setopt   autopushd pushdminus extendedglob rcquotes mailwarning
 unsetopt bgnice autoparamslash
 
@@ -41,11 +41,11 @@ zle -N history-beginning-search-forward-end history-search-end
 
 ### Set variables
 #################
-PATH="$PATH:$HOME/.local/bin:$HOME/wm/skripte:/usr/local/bin:/usr/local/sbin/"
-HISTFILE=$HOME/.zhistory
+PATH="$PATH:$HOME/.local/bin:$HOME/wm/skripte"
+HISTFILE="$HOME/.zhistory"
 HISTSIZE=1000
 SAVEHIST=1000
-HOSTNAME="`hostname`"
+HOSTNAME="$(hostname)"
 LS_COLORS='rs=0:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:tw=30;42:ow=34;42:st=37;44:ex=01;32:';
 
 ### Load colors
@@ -230,6 +230,7 @@ alias tlmgr='/usr/share/texmf-dist/scripts/texlive/tlmgr.pl --usermode'
 alias ffpw='firefox --private-window'
 alias ffpwd='devour firefox --private-window'
 alias oni2='devour Onivim2-x86_64.AppImage -f'
+alias lutris='WINEPREFIX="/home/nikola/Data/wine" lutris'
 
 ### Bind keys
 #############
@@ -295,7 +296,7 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 # 1. All /etc/hosts hostnames are in autocomplete
 # 2. If you have a comment in /etc/hosts like #%foobar.domain,
 #    then foobar.domain will show up in autocomplete!
-zstyle ':completion:*' hosts $(awk '/^[^#]/ {print $2 $3" "$4" "$5}' /etc/hosts | grep -v ip6- && grep "^#%" /etc/hosts | awk -F% '{print $2}') 
+zstyle ':completion:*' hosts $(awk '/^[^#]/ {print $2 $3" "$4" "$5}' /etc/hosts | grep -v ip6- && grep "^#%" /etc/hosts | awk -F% '{print $2}')
 # Filename suffixes to ignore during completion (except after rm command)
 zstyle ':completion:*:*:(^rm):*:*files' ignored-patterns '*?.o' '*?.c~' \
 	'*?.old' '*?.pro'
@@ -338,8 +339,9 @@ export DOTBARE_TREE="$HOME"
 export CARP_DIR="/home/nikola/Documents/test2/Carp"
 
 export NO_AT_BRIDGE=1
-export PATH="$PATH:$HOME/x86_64-gcc/bin/:$HOME/.emacs.d/bin:$HOME/arm-gcc/bin"
-export _JAVA_AWT_WM_NONREPARENTING=1 
+export PATH="$HOME/Documents/test2/go/goroot/bin:$PATH:$HOME/x86_64-gcc/bin/:$HOME/.emacs.d/bin:$HOME/arm-gcc/bin"
+# echo "PATH : $PATH"
+export _JAVA_AWT_WM_NONREPARENTING=1
 # export LC_ALL="en_US.UTF-8"
 
 # Dok ne popravim
@@ -353,6 +355,10 @@ alias srbija="echo \"\033[41m      \033[44m      \033[47m      \033[0m\""
 alias ed="ed -vp:"
 alias cnping="cnping -t Test"
 alias packettracer="devour packettracer"
+alias anbox-menu="anbox launch --package=org.anbox.appmgr --component=org.anbox.appmgr.AppViewActivity"
 
 # export MANPAGER="env MAN_PN=1 vim -M +MANPAGER -"
 # export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
+
+# NOTE: WINEPREFIX="/home/nikola/Data/wine"
