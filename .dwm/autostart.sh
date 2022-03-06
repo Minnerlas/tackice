@@ -11,22 +11,20 @@ xinput set-prop $TP `xinput list-props $TP | grep "libinput Natural Scrolling En
 
 numlockx &
 
-picom & 
+picom &
 
 # wait 1
-# xcompmgr & 
- 
+# xcompmgr &
+
 xautolock -time 10 -locker slock &
 
 slstatus &
 
 dunst &
 
-lxsession &
+# lxsession &
 
 flameshot &
-
-sudo ip link set wlp19s0 down &
 
 #bindsym XF86AudioLowerVolume exec notify-send "Volume" `amixer sget Master | grep 'Right:' | awk -F'[][]' '{ print $2 }'`
 #bindsym XF86AudioRaiseVolume exec notify-send "Volume" `amixer sget Master | grep 'Right:' | awk -F'[][]' '{ print $2 }'`
