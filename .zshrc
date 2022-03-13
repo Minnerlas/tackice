@@ -355,10 +355,17 @@ alias srbija="echo \"\033[41m      \033[44m      \033[47m      \033[0m\""
 alias ed="ed -vp:"
 alias cnping="cnping -t Test"
 alias packettracer="devour packettracer"
-alias anbox-menu="anbox launch --package=org.anbox.appmgr --component=org.anbox.appmgr.AppViewActivity"
+alias anmenu="anbox launch --package=org.anbox.appmgr --component=org.anbox.appmgr.AppViewActivity"
+alias anrootless="anbox session-manager --rootless"
+alias anspotify="anbox launch --action=android.intent.action.MAIN --package=com.spotify.music --component=com.spotify.music.MainActivity"
+alias ansettings="anbox launch --action=android.intent.action.MAIN --package=com.android.settings --component=com.android.settings.Settings"
+alias xterm="xterm -fa 'Monospace' -fs 14"
+alias emacscl="emacsclient -c -a emacs"
+alias emacsclt="emacsclient -t -a ''"
 
 # export MANPAGER="env MAN_PN=1 vim -M +MANPAGER -"
 # export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 
 # NOTE: WINEPREFIX="/home/nikola/Data/wine"
+# NOTE sfm file manager
