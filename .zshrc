@@ -41,7 +41,6 @@ zle -N history-beginning-search-forward-end history-search-end
 
 ### Set variables
 #################
-PATH="$PATH:$HOME/.local/bin:$HOME/wm/skripte"
 HISTFILE="$HOME/.zhistory"
 HISTSIZE=1000
 SAVEHIST=1000
@@ -339,8 +338,6 @@ export DOTBARE_TREE="$HOME"
 export CARP_DIR="/home/nikola/Documents/test2/Carp"
 
 export NO_AT_BRIDGE=1
-export PATH="$HOME/Documents/test2/go/goroot/bin:$PATH:$HOME/x86_64-gcc/bin/:$HOME/.emacs.d/bin:$HOME/arm-gcc/bin"
-# echo "PATH : $PATH"
 export _JAVA_AWT_WM_NONREPARENTING=1
 # export LC_ALL="en_US.UTF-8"
 
