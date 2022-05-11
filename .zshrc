@@ -358,7 +358,9 @@ alias anspotify="anbox launch --action=android.intent.action.MAIN --package=com.
 alias ansettings="anbox launch --action=android.intent.action.MAIN --package=com.android.settings --component=com.android.settings.Settings"
 alias xterm="xterm -fa 'Monospace' -fs 14"
 alias emacscl="emacsclient -c -a emacs"
+alias emacscld="devour emacsclient -c -a emacs"
 alias emacsclt="emacsclient -t -a ''"
+alias freqs="cat ~/.zhistory | cut -c16- | sort | uniq -c | sort -rn | head -n30"
 
 # export MANPAGER="env MAN_PN=1 vim -M +MANPAGER -"
 # export MANPAGER="sh -c 'col -bx | bat -l man -p'"

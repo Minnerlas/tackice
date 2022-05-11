@@ -162,6 +162,7 @@ Plug 'uniquepointer/qbe.vim'
 " Plug 'kovisoft/slimv'
 Plug 'JuliaEditorSupport/julia-vim'
 Plug 'https://git.sr.ht/~sircmpwn/hare.vim'
+Plug 'https://git.sr.ht/~torresjrjr/vim-haredoc'
 Plug 'junegunn/fzf'
 Plug 'vhda/verilog_systemverilog.vim'
 
