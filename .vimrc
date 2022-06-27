@@ -165,6 +165,7 @@ Plug 'https://git.sr.ht/~sircmpwn/hare.vim'
 Plug 'https://git.sr.ht/~torresjrjr/vim-haredoc'
 Plug 'junegunn/fzf'
 Plug 'vhda/verilog_systemverilog.vim'
+Plug 'HerringtonDarkholme/yats.vim'
 
 call plug#end()
 
@@ -176,6 +177,7 @@ set number
 nnoremap <silent> <F5> :!pokreni.sh %<CR>
 set tabstop=4
 set shiftwidth=4
+" set expandtab
 " set background=dark
 if has("gui_running")
 	colorscheme desert

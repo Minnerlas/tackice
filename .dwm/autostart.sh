@@ -26,6 +26,8 @@ dunst &
 
 flameshot &
 
+lxpolkit &
+
 #bindsym XF86AudioLowerVolume exec notify-send "Volume" `amixer sget Master | grep 'Right:' | awk -F'[][]' '{ print $2 }'`
 #bindsym XF86AudioRaiseVolume exec notify-send "Volume" `amixer sget Master | grep 'Right:' | awk -F'[][]' '{ print $2 }'`
 
