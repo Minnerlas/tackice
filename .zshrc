@@ -231,6 +231,8 @@ alias ffpwd='devour firefox --private-window'
 alias oni2='devour Onivim2-x86_64.AppImage -f'
 alias lutris='WINEPREFIX="/home/nikola/Data/wine" lutris'
 
+fpath+=($HOME/.local/share/zsh/functions/Completion)
+
 ### Bind keys
 #############
 autoload -U compinit
@@ -364,10 +366,23 @@ alias freqs="cat ~/.zhistory | cut -c16- | sort | uniq -c | sort -rn | head -n30
 alias redshift-bgd="redshift-gtk -l44.7807:20.5003"
 alias sudofail="faillock  --reset --user user1"
 alias sudo="doas"
+alias vimgit="vim -c Gs"
+
+alias victoria2="env WINEPREFIX=\"/home/nikola/Data/wine32\" WINEARCH=win32 wine explorer /desktop=vic2 ~/Data/wine32/drive_c/users/nikola/Documents/Victoria.II.v3.04.Inclu.ALL.DLC/victoria2.exe"
 
 # export MANPAGER="env MAN_PN=1 vim -M +MANPAGER -"
 # export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 
 # NOTE: WINEPREFIX="/home/nikola/Data/wine"
+# NOTE: WINEPREFIX="/home/nikola/Data/wine32" WINEARCH=win32
 # NOTE sfm file manager
+# NOTE за ограничавање броја језгара доступних процесу
+#      $ taskset --cpu-list 0-4 ninja
+# NOTE za conda ↓
+[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
+
+# distcc сервер
+# distccd --listen 0.0.0.0 --log-stderr --verbose --no-detach -a 0.0.0.0/0 -j12
+# distcc клијент
+# DISTCC_HOSTS=pin-server/6 127.0.0.1/12 PATH="/usr/lib/distcc:$PATH" make -j20 all

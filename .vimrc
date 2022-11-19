@@ -269,6 +269,8 @@ noremap <silent> <leader>b :Break<cr>
 noremap <silent> <leader>r :Run<cr>
 noremap <silent> <leader>c :Cont<cr>
 
+set ttymouse=xterm2
+
 " Definisanje okruženja
 " :onoremap <silent> i$ :<C-U>normal! T$vt$<CR>
 " :onoremap <silent> a$ :<C-U>normal! F$vf$<CR>
