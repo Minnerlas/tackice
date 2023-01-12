@@ -229,7 +229,9 @@ nmap <C-c><C-a> :w >> repl<CR>
 
 " nmap <C-c><C-p> di()<Esc>P
 
+" Git
 command Gs :tab Git
+command Ghere :Git ++curwin
 
 " Tabovi
 autocmd FileType scheme setlocal shiftwidth=2 softtabstop=2 expandtab

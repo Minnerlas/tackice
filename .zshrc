@@ -364,9 +364,11 @@ alias emacscld="devour emacsclient -c -a emacs"
 alias emacsclt="emacsclient -t -a ''"
 alias freqs="cat ~/.zhistory | cut -c16- | sort | uniq -c | sort -rn | head -n30"
 alias redshift-bgd="redshift-gtk -l44.7807:20.5003"
-alias sudofail="faillock  --reset --user user1"
+alias sudofail='faillock --reset --user $USER'
 alias sudo="doas"
-alias vimgit="vim -c Gs"
+alias vimgit="vim -c Ghere"
+alias sshartix="ssh nikolar@iso.artixlinux.org -p 65432"
+alias urlencode="jq -sRr @uri"
 
 alias victoria2="env WINEPREFIX=\"/home/nikola/Data/wine32\" WINEARCH=win32 wine explorer /desktop=vic2 ~/Data/wine32/drive_c/users/nikola/Documents/Victoria.II.v3.04.Inclu.ALL.DLC/victoria2.exe"
 
