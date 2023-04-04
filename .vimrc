@@ -272,6 +272,7 @@ noremap <silent> <leader>r :Run<cr>
 noremap <silent> <leader>c :Cont<cr>
 
 set ttymouse=xterm2
+set signcolumn=number
 
 " Definisanje okruženja
 " :onoremap <silent> i$ :<C-U>normal! T$vt$<CR>
@@ -287,18 +288,18 @@ nnoremap <silent> <C-l> :FZF<cr>
 
 " TODO
 " " Commenting blocks of code.
-" augroup commenting_blocks_of_code
-" 	autocmd!
-" 	autocmd FileType c,cpp,java,scala let b:comment_leader = '// '
-" 	autocmd FileType sh,ruby,python   let b:comment_leader = '# '
-" 	autocmd FileType conf,fstab       let b:comment_leader = '# '
-" 	autocmd FileType tex              let b:comment_leader = '% '
-" 	autocmd FileType mail             let b:comment_leader = '> '
-" 	autocmd FileType vim              let b:comment_leader = '" '
-" 	autocmd FileType julia            let b:comment_leader = '# '
-" augroup END
-" noremap <silent> ,cc :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
-" noremap <silent> ,cu :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
+augroup commenting_blocks_of_code
+	autocmd!
+	autocmd FileType c,cpp,java,scala,hare let b:comment_leader = '// '
+	autocmd FileType sh,ruby,python        let b:comment_leader = '# '
+	autocmd FileType conf,fstab            let b:comment_leader = '# '
+	autocmd FileType tex                   let b:comment_leader = '% '
+	autocmd FileType mail                  let b:comment_leader = '> '
+	autocmd FileType vim                   let b:comment_leader = '" '
+	autocmd FileType julia                 let b:comment_leader = '# '
+augroup END
+noremap <silent> ,cc :<C-B>silent <C-E>s/^\(\s*\)/\1<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
+noremap <silent> ,cu :<C-B>silent <C-E>s/\(^\s*\)\V<C-R>=escape(b:comment_leader,'\/')<CR>/\1/e<CR>:nohlsearch<CR>
 
 " v<izaberi tekst>p => menja izabrani tekst sadrzajem "
 " Da bi postavio na određeni programski jezik, ukucaj :setf c
