@@ -1,16 +1,20 @@
 "query:Unread Articles:unread = \"yes\""
-https://drewdevault.com/blog/index.xml blogs
-https://nullprogram.com/feed/ blogs
-https://ubports.com/blog/ubports-news-1/feed blogs
-https://harelang.org/blog/index.xml blogs
-https://phoboslab.org/log/feed blogs
-https://www.more-magic.net/feed.atom blogs
-https://os.phil-opp.com/rss.xml blogs
-https://fasterthanli.me/index.xml blogs
-https://www.righto.com/feeds/posts/default blogs
-https://www.haiku-os.org/blog/index.xml blogs
-https://artixlinux.org/feed.php news artix
-https://box86.org/feed news
-https://www.youtube.com/feeds/videos.xml?channel_id=UCePbPbJ96WvMeMm_VuDkOJA youtube
-https://www.youtube.com/feeds/videos.xml?channel_id=UCld68syR8Wi-GY_n4CaoJGA youtube
-https://www.youtube.com/feeds/videos.xml?channel_id=UC1LpsuAUaKoMzzJSEt5WImw youtube
+https://drewdevault.com/blog/index.xml											blogs
+https://nullprogram.com/feed/													blogs
+https://ubports.com/blog/ubports-news-1/feed									blogs
+https://harelang.org/blog/index.xml												blogs
+https://phoboslab.org/log/feed													blogs
+https://www.more-magic.net/feed.atom											blogs
+https://os.phil-opp.com/rss.xml													blogs
+https://fasterthanli.me/index.xml												blogs
+https://www.righto.com/feeds/posts/default										blogs
+https://www.haiku-os.org/blog/index.xml											blogs
+https://awesomekling.github.io/feed.xml											blogs
+https://www.lilysthings.org/blog/rss.xml										blogs
+https://artixlinux.org/feed.php													news artix
+https://box86.org/feed															news
+https://www.osnews.com/feed														news
+https://github.com/openzfs/zfs/releases.atom									news
+https://www.youtube.com/feeds/videos.xml?channel_id=UCePbPbJ96WvMeMm_VuDkOJA	youtube
+https://www.youtube.com/feeds/videos.xml?channel_id=UCld68syR8Wi-GY_n4CaoJGA 	youtube
+https://www.youtube.com/feeds/videos.xml?channel_id=UC1LpsuAUaKoMzzJSEt5WImw 	youtube
