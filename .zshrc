@@ -9,6 +9,7 @@
 # setopt NOHUP
 # setopt NOTIFY
 # setopt NO_FLOW_CONTROL
+setopt HIST_IGNORE_SPACE
 setopt INC_APPEND_HISTORY SHARE_HISTORY
 setopt APPEND_HISTORY
 # setopt AUTO_LIST
@@ -200,7 +201,7 @@ alias ..="cd .."
 alias cd..="cd .."
 alias ll="ls -lisa --color=auto"
 alias home="cd ~"
-alias df="df -ahiT --total"
+alias df="df -ahT --total"
 alias mkdir="mkdir -pv"
 alias mkfile="touch"
 alias rm="rm -rfi"
@@ -369,8 +370,16 @@ alias sudo="doas"
 alias vimgit="vim -c Ghere"
 alias sshartix="ssh nikolar@iso.artixlinux.org -p 65432"
 alias urlencode="jq -sRr @uri"
+alias ip='ip --color=auto'
+alias pacman-ignore='pacman -Syu --ignore linux,linux-headers,linux-firmware,linux-firmware-whence,firefox'
+alias github-otp='oathtool -b --totp "$(pass show github.com/totp/Minnerlas)"'
 
 alias victoria2="env WINEPREFIX=\"/home/nikola/Data/wine32\" WINEARCH=win32 wine explorer /desktop=vic2 ~/Data/wine32/drive_c/users/nikola/Documents/Victoria.II.v3.04.Inclu.ALL.DLC/victoria2.exe"
+
+rcopy()  { xclip -sel c -out | ssh "$1" DISPLAY=:0 xsel -i -b }
+rpaste() { ssh "$1" DISPLAY=:0 xclip -sel -c -out | xclip -sel c }
+
+# xdg-ninja homedir scan
 
 # export MANPAGER="env MAN_PN=1 vim -M +MANPAGER -"
 # export MANPAGER="sh -c 'col -bx | bat -l man -p'"
@@ -383,6 +392,9 @@ alias victoria2="env WINEPREFIX=\"/home/nikola/Data/wine32\" WINEARCH=win32 wine
 #      $ taskset --cpu-list 0-4 ninja
 # NOTE za conda ↓
 [ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
+
+# opam configuration
+# [ ! -r /home/nikola/.local/share/opam/opam-init/init.zsh ] || source /home/nikola/.local/share/opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
 # distcc сервер
 # distccd --listen 0.0.0.0 --log-stderr --verbose --no-detach -a 0.0.0.0/0 -j12
