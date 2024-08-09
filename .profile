@@ -3,6 +3,7 @@ source /etc/profile
 export PATH="$HOME/.local/bin:$HOME/wm/skripte:$PATH"
 # export PATH="$HOME/Documents/test2/go/goroot/bin:$PATH:$HOME/x86_64-gcc/bin/:$HOME/.emacs.d/bin:$HOME/arm-gcc/bin"
 export PATH="$PATH:$HOME/x86_64-gcc/bin/:$HOME/.emacs.d/bin:$HOME/arm-gcc/bin"
+export PATH="$PATH:$HOME/.vim/plugged/vim-superman/bin"
 # export PATH="$PATH:$HOME/.local/node_modules/bin"
 # echo "PATH : $PATH"
 
@@ -25,3 +26,5 @@ export JULIA_DEPOT_PATH="$XDG_DATA_HOME/julia:$JULIA_DEPOT_PATH"
 export SQLITE_HISTORY="$XDG_DATA_HOME/sqlite_history"
 export TERMINFO="$XDG_DATA_HOME/terminfo"
 export TERMINFO_DIRS="$XDG_DATA_HOME/terminfo:/usr/share/terminfo"
+export CMAKE_BUILD_PARALLEL_LEVEL="$(( $(nproc) - 2))"
+export OPAMROOT="$XDG_DATA_HOME/opam"
