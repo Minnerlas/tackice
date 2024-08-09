@@ -4,10 +4,12 @@
 
 setxkbmap -layout rs,rs -variant latin, -option grp:win_space_toggle &
 
-TP=`xinput | grep -i "touchpad" | grep -oP '(?<=id=)[0-9]+'` # Nalazi tacped
+TP=$(xinput | grep -i "touchpad" | grep -oP '(?<=id=)[0-9]+') # Nalazi tacped
 
-xinput set-prop $TP `xinput list-props $TP | grep "libinput Tapping Enabled (" | awk -F"[()]" '{print $2}'` 1 & # Podesava klik na dodir
-xinput set-prop $TP `xinput list-props $TP | grep "libinput Natural Scrolling Enabled (" | awk -F"[()]" '{print $2}'` 1 & # Podesava smer skrolovanja
+xinput set-prop "$TP" $(xinput list-props "$TP" \
+	| grep "libinput Tapping Enabled (" | awk -F"[()]" '{print $2}') 1 & # Podesava klik na dodir
+xinput set-prop "$TP" $(xinput list-props "$TP" \
+	| grep "libinput Natural Scrolling Enabled (" | awk -F"[()]" '{print $2}') 1 & # Podesava smer skrolovanja
 
 # numlockx &
 
