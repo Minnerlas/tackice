@@ -43,8 +43,8 @@ zle -N history-beginning-search-forward-end history-search-end
 ### Set variables
 #################
 HISTFILE="$HOME/.zhistory"
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=20000
+SAVEHIST=20000
 HOSTNAME="$(hostname)"
 LS_COLORS='rs=0:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:tw=30;42:ow=34;42:st=37;44:ex=01;32:';
 
@@ -328,12 +328,14 @@ zstyle '*' single-ignored show
 ### Source plugins
 ##################
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # source $HOME/.cargo/env
 # korona
 set -o vi
 source ~/.dotbare/dotbare.plugin.zsh
 # alias config='/usr/bin/git --git-dir=$HOME/wm/tackice/ --work-tree=$HOME'
 
+export GPG_TTY="$(tty)"
 export EDITOR="vim"
 export DOTBARE_DIR="$HOME/.cfg"
 export DOTBARE_TREE="$HOME"
@@ -368,11 +370,18 @@ alias redshift-bgd="redshift-gtk -l44.7807:20.5003"
 alias sudofail='faillock --reset --user $USER'
 alias sudo="doas"
 alias vimgit="vim -c Ghere"
+alias vimwiki='vim -c VimwikiIndex'
 alias sshartix="ssh nikolar@iso.artixlinux.org -p 65432"
 alias urlencode="jq -sRr @uri"
 alias ip='ip --color=auto'
 alias pacman-ignore='pacman -Syu --ignore linux,linux-headers,linux-firmware,linux-firmware-whence,firefox'
-alias github-otp='oathtool -b --totp "$(pass show github.com/totp/Minnerlas)"'
+alias github-otp='oathtool -b --totp "$(pass show totp/github.com/Minnerlas)"'
+alias clangfmt='clang-format --style="{BasedOnStyle: LLVM, TabWidth: 4, IndentWidth: 4, UseTab: true, ColumnLimit: 80, BreakBeforeBinaryOperators: true}"'
+alias figletrs='figlet -f banner.flf -C utf8.flc'
+alias tmuxsz='tmux list-panes -F "#{pane_width}x#{pane_height}"'
+alias prognoza='curl -H "Accept-Language: sr" wttr.in'
+alias prognozav2='curl -H "Accept-Language: sr" v2.wttr.in'
+alias 0x0st='xclip -sel c -o | curl -F"file=@-" 0x0.st'
 
 alias victoria2="env WINEPREFIX=\"/home/nikola/Data/wine32\" WINEARCH=win32 wine explorer /desktop=vic2 ~/Data/wine32/drive_c/users/nikola/Documents/Victoria.II.v3.04.Inclu.ALL.DLC/victoria2.exe"
 
