@@ -9,3 +9,4 @@ pw() {
 }
 
 machine nebula nikilirikili@gmail.com "$(pw nebula.tv/nikilirikili@gmail.com)"
+machine watchnebula nikilirikili@gmail.com "$(pw nebula.tv/nikilirikili@gmail.com)"
