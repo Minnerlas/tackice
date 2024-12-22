@@ -382,6 +382,8 @@ alias tmuxsz='tmux list-panes -F "#{pane_width}x#{pane_height}"'
 alias prognoza='curl -H "Accept-Language: sr" wttr.in'
 alias prognozav2='curl -H "Accept-Language: sr" v2.wttr.in'
 alias 0x0st='xclip -sel c -o | curl -F"file=@-" 0x0.st'
+alias formatc='indent -ut -linux -brf -o -'
+alias skylead-vpn='sudo openvpn --config /etc/openvpn/client/client.conf'
 
 alias victoria2="env WINEPREFIX=\"/home/nikola/Data/wine32\" WINEARCH=win32 wine explorer /desktop=vic2 ~/Data/wine32/drive_c/users/nikola/Documents/Victoria.II.v3.04.Inclu.ALL.DLC/victoria2.exe"
 
@@ -401,6 +403,10 @@ rpaste() { ssh "$1" DISPLAY=:0 xclip -sel -c -out | xclip -sel c }
 #      $ taskset --cpu-list 0-4 ninja
 # NOTE za conda ↓
 [ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
+
+# NOTE: Test
+export DEBUGINFOD_URLS=https://debuginfod.elfutils.org
+export VAGRANT_HOME=/home/nikola/.local/share/vagrant
 
 # opam configuration
 # [ ! -r /home/nikola/.local/share/opam/opam-init/init.zsh ] || source /home/nikola/.local/share/opam/opam-init/init.zsh  > /dev/null 2> /dev/null
