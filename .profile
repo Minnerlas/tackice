@@ -28,3 +28,7 @@ export TERMINFO="$XDG_DATA_HOME/terminfo"
 export TERMINFO_DIRS="$XDG_DATA_HOME/terminfo:/usr/share/terminfo"
 export CMAKE_BUILD_PARALLEL_LEVEL="$(( $(nproc) - 2))"
 export OPAMROOT="$XDG_DATA_HOME/opam"
+
+# TODO GUIX
+# GUIX_PROFILE="/home/nikola/.config/guix/current"
+# . "$GUIX_PROFILE/etc/profile"
