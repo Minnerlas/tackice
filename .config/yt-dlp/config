@@ -1,1 +1,2 @@
+--netrc-cmd 'yt-dlp-auth.sh'
 -S vcodec:-av1
